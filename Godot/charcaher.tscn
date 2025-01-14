@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=3 uid="uid://iwm1n36krkb5"]
+
+[ext_resource type="Texture2D" uid="uid://ckba4081c3no" path="res://Assests/360_F_624758951_11oeguCV1btl9GCAGbfbZyeBZjLfdbE5.jpg" id="1_pgosb"]
+
+[sub_resource type="GDScript" id="GDScript_qblcf"]
+script/source = "extends CharacterBody2D
+
+
+const SPEED = 300.0
+const JUMP_VELOCITY = -400.0
+
+
+func _physics_process(delta: float) -> void:
+	# Add the gravity.
+	if not is_on_floor():
+		velocity += get_gravity() * delta
+
+	# Handle jump.
+	if Input.is_action_just_pressed(\"ui_accept\") and is_on_floor():
+		velocity.y = JUMP_VELOCITY
+
+	# Get the input direction and handle the movement/deceleration.
+	# As good practice, you should replace UI actions with custom gameplay actions.
+	var direction := Input.get_axis(\"ui_left\", \"ui_right\")
+	if direction:
+		velocity.x = direction * SPEED
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+
+	move_and_slide()
+"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5la7s"]
+radius = 145.282
+
+[node name="chacter" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(0.499992, 0.499996)
+scale = Vector2(0.547222, 0.563889)
+script = SubResource("GDScript_qblcf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CircleShape2D_5la7s")
+one_way_collision_margin = 2.2
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("1_pgosb")
+flip_h = true
+flip_v = true
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
