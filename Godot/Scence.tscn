@@ -41,4 +41,4 @@ physics_material_override = SubResource("PhysicsMaterial_e2gp5")
 position = Vector2(0, 7)
 shape = SubResource("RectangleShape2D_yl3k5")
 
-[node name="Node2D4" parent="." instance=ExtResource("3_qbt5c")]
+[node name="chacter" parent="." instance=ExtResource("3_qbt5c")]
