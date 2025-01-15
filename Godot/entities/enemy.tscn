@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7vy5k1hwq8es"]
+
+[ext_resource type="Texture2D" uid="uid://dj4uq8kxo53i8" path="res://assets/textures/goober.png" id="1_4iwnb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_em1qr"]
+size = Vector2(76, 73)
+
+[node name="enemy" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("1_4iwnb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+scale = Vector2(0.125, 0.125)
+shape = SubResource("RectangleShape2D_em1qr")

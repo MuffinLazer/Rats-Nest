@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=4 uid="uid://bqfm76nlto7m3"]
+
+[ext_resource type="Texture2D" uid="uid://cltgd04b7p4sl" path="res://assets/textures/topsoil.png" id="1_xkfov"]
+[ext_resource type="PackedScene" uid="uid://iwm1n36krkb5" path="res://entities/character/character.tscn" id="2_8vfoo"]
+[ext_resource type="PackedScene" uid="uid://c7vy5k1hwq8es" path="res://entities/enemy.tscn" id="3_kh0do"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pdpbp"]
+texture = ExtResource("1_xkfov")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, 8, 8, -8, -8, -8)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, 8, 8, -8, -8, -8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, 8, -8, 8, 8, -8)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, 8, -8, 8, 8, -8)
+
+[sub_resource type="TileSet" id="TileSet_s65ap"]
+physics_layer_0/collision_layer = 1
+sources/2 = SubResource("TileSetAtlasSource_pdpbp")
+
+[node name="Nest" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD//wEAAgAAAAAAAAD//wIAAgAAAAEAAAAAAAEAAgABAAAAAAAAAAIAAgABAAEAAAABAAEAAgAAAAAAAAABAAIAAgAAAAEAAAACAAEAAgABAAAAAAACAAIAAgABAAEAAAADAAEAAgAAAAAAAAADAAIAAgABAAEAAEAEAAEAAgABAAAAAAAEAAIAAgABAAEAAED9/wEAAgAAAAAAAAD9/wIAAgAAAAEAAAD+/wEAAgABAAAAAAD+/wIAAgABAAEAAAD7/wEAAgAAAAAAAAD7/wIAAgAAAAEAAAD8/wEAAgABAAAAAAD8/wIAAgABAAEAAAD5/wEAAgAAAAAAAAD5/wIAAgAAAAEAAAD6/wEAAgABAAAAAAD6/wIAAgABAAEAAAAFAAEAAgAAAAAAAAAFAAIAAgABAAEAAEAGAAEAAgABAAAAAAAGAAIAAgABAAEAAEAHAAEAAgABAAEAADAIAAAAAgABAAAAAAAJAAAAAgAAAAAAAAAKAAAAAgAAAAAAAAALAAAAAgAAAAAAAAAHAAIAAgABAAEAAEAIAAIAAgABAAEAAEAJAAEAAgABAAEAADAKAAEAAgAAAAEAADALAAEAAgAAAAEAAAAIAP3/AgAAAAAAAAAJAP3/AgABAAAAAAAKAPr/AgAAAAAAAAALAPr/AgABAAAAAAAIAAEAAgAAAAEAADAHAAAAAgACAAAAAAAJAAIAAgABAAEAAEAKAAIAAgABAAEAAEALAAIAAgABAAEAAEAIAPf/AgAAAAAAAAAJAPf/AgABAAAAAAAKAPT/AgAAAAAAAAALAPT/AgABAAAAAAD3/wIAAgAAAAEAAAD4/wIAAgABAAEAAAD3/wEAAgABAAEAADD4/wEAAgAAAAEAADD3////AgAAAAEAAAD3/wAAAgAAAAEAAAD4////AgABAAEAAAD4/wAAAgABAAEAAAD3//7/AgAAAAAAAAD4//7/AgABAAAAAAD1/wEAAgABAAAAAAD1/wIAAgABAAEAAAD2/wEAAgABAAAAAAD2/wIAAgABAAEAAADz/wEAAgABAAAAAADz/wIAAgAAAAEAAFD0/wEAAgAAAAAAAAD0/wIAAgABAAEAAFA=")
+tile_set = SubResource("TileSet_s65ap")
+
+[node name="Character" parent="." instance=ExtResource("2_8vfoo")]
+floor_constant_speed = true
+
+[node name="enemy" parent="." instance=ExtResource("3_kh0do")]
+position = Vector2(-54, -39)
