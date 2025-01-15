@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://c7vy5k1hwq8es"]
+
+[ext_resource type="Texture2D" uid="uid://dj4uq8kxo53i8" path="res://assets/textures/goober.png" id="1_4iwnb"]
+[ext_resource type="Script" path="res://entities/Enemys/enemy.gd" id="1_147ps"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2dc5x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_057ac"]
+size = Vector2(33, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f38go"]
+size = Vector2(40, 40)
+
+[node name="enemy" type="CharacterBody2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_147ps")
+speed = null
+jump_velocity = null
+move_direction = null
+
+[node name="Node2D" type="Node2D" parent="."]
+scale = Vector2(0.5, 0.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_4iwnb")
+
+[node name="GroundDetector" type="Area2D" parent="Node2D"]
+scale = Vector2(0.5, 0.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/GroundDetector"]
+position = Vector2(87, 73)
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_2dc5x")
+
+[node name="JumpBlockedDetector" type="Area2D" parent="Node2D"]
+scale = Vector2(0.5, 0.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/JumpBlockedDetector"]
+position = Vector2(92, -84)
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_057ac")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_f38go")
