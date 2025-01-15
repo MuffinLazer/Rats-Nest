@@ -95,4 +95,4 @@ position = Vector2(-0.913691, -18.6207)
 sprite_frames = SubResource("SpriteFrames_7hwam")
 animation = &"danci"
 autoplay = "danci"
-frame_progress = 0.324656
+frame_progress = 0.220192
