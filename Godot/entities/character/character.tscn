@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://iwm1n36krkb5"]
 
-[ext_resource type="Texture2D" uid="uid://ckba4081c3no" path="res://Assests/360_F_624758951_11oeguCV1btl9GCAGbfbZyeBZjLfdbE5.jpg" id="1_pgosb"]
+[ext_resource type="Texture2D" uid="uid://ckba4081c3no" path="res://assets/ball.jpg" id="1_pgosb"]
 
 [sub_resource type="GDScript" id="GDScript_qblcf"]
 script/source = "extends CharacterBody2D
@@ -33,20 +33,18 @@ func _physics_process(delta: float) -> void:
 [sub_resource type="CircleShape2D" id="CircleShape2D_5la7s"]
 radius = 145.282
 
-[node name="chacter" type="Node2D"]
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="Character" type="CharacterBody2D"]
 position = Vector2(0.499992, 0.499996)
 scale = Vector2(0.547222, 0.563889)
 script = SubResource("GDScript_qblcf")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_5la7s")
 one_way_collision_margin = 2.2
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_pgosb")
 flip_h = true
 flip_v = true
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+[node name="Camera2D" type="Camera2D" parent="."]

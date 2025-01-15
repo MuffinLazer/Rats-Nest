@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b7koouqe2jeyl"
-path="res://.godot/imported/mantequilla-bean-652485.webp-03d71b2a89512c3bb280f09e5dad31d3.ctex"
+path="res://.godot/imported/beans.webp-59af63a622826f8084ca5a25e346bec7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assests/mantequilla-bean-652485.webp"
-dest_files=["res://.godot/imported/mantequilla-bean-652485.webp-03d71b2a89512c3bb280f09e5dad31d3.ctex"]
+source_file="res://assets/beans.webp"
+dest_files=["res://.godot/imported/beans.webp-59af63a622826f8084ca5a25e346bec7.ctex"]
 
 [params]
 

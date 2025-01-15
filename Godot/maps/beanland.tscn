@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://cd181ssi6tkhv"]
+
+[ext_resource type="Texture2D" uid="uid://b7koouqe2jeyl" path="res://assets/beans.webp" id="1_b0a43"]
+[ext_resource type="Texture2D" uid="uid://bd2fxu24uxric" path="res://assets/grass.jpeg" id="2_sxeln"]
+[ext_resource type="PackedScene" uid="uid://iwm1n36krkb5" path="res://entities/character/character.tscn" id="3_obcw1"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_e2gp5"]
+resource_local_to_scene = true
+bounce = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yl3k5"]
+size = Vector2(450, 100)
+
+[node name="BeanLand" type="Node2D"]
+
+[node name="SmallBeans" type="Sprite2D" parent="."]
+position = Vector2(1446, 218)
+scale = Vector2(0.152832, 0.168132)
+texture = ExtResource("1_b0a43")
+
+[node name="BigBeans" type="Sprite2D" parent="."]
+position = Vector2(576, 323)
+scale = Vector2(0.563232, 0.471886)
+texture = ExtResource("1_b0a43")
+
+[node name="Grass" type="Sprite2D" parent="."]
+position = Vector2(580, 701)
+scale = Vector2(2.57778, 1)
+texture = ExtResource("2_sxeln")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Grass"]
+physics_material_override = SubResource("PhysicsMaterial_e2gp5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Grass/StaticBody2D"]
+position = Vector2(0, 7)
+shape = SubResource("RectangleShape2D_yl3k5")
+
+[node name="Character" parent="." instance=ExtResource("3_obcw1")]
