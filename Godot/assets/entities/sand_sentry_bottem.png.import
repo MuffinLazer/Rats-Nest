@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwhkrge3jbro5"
-path="res://.godot/imported/goober.png-ca82fcee26b9d7b5fc6ee3772c305554.ctex"
+uid="uid://cet5l0fsje5wi"
+path="res://.godot/imported/sand_sentry_bottem.png-32018567b7a7eff48572055bc70e111d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/entities/goober.png"
-dest_files=["res://.godot/imported/goober.png-ca82fcee26b9d7b5fc6ee3772c305554.ctex"]
+source_file="res://assets/entities/sand_sentry_bottem.png"
+dest_files=["res://.godot/imported/sand_sentry_bottem.png-32018567b7a7eff48572055bc70e111d.ctex"]
 
 [params]
 

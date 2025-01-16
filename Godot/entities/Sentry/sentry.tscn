@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4sx40egpxcc6"]
+
+[ext_resource type="Texture2D" uid="uid://ivp8bwqjn5f4" path="res://assets/entities/sand_sentry_top.png" id="1_bdbck"]
+[ext_resource type="Script" path="res://entities/Sentry/sentry.gd" id="1_ojn1a"]
+[ext_resource type="Texture2D" uid="uid://cet5l0fsje5wi" path="res://assets/entities/sand_sentry_bottem.png" id="2_ku0gb"]
+
+[node name="Sentry" type="Node2D"]
+script = ExtResource("1_ojn1a")
+
+[node name="SpriteTopHalf" type="Sprite2D" parent="."]
+position = Vector2(2, 0)
+texture = ExtResource("1_bdbck")
+flip_h = true
+
+[node name="SpriteBottomHalf" type="Sprite2D" parent="."]
+texture = ExtResource("2_ku0gb")
