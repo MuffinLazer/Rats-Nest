@@ -4,7 +4,7 @@ extends Node2D
 
 @onready var top_half = $SpriteTopHalf
 
-func _process(delta):
+func _process(_delta):
 	scale.x = int(player.global_position.x > global_position.x) * 2 - 1
 
 	top_half.look_at(player.global_position)
