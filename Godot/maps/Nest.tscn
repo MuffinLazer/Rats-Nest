@@ -35,3 +35,12 @@ floor_constant_speed = true
 
 [node name="enemy" parent="." instance=ExtResource("3_kh0do")]
 position = Vector2(-52, 11)
+
+[node name="Goober" parent="." instance=ExtResource("3_kh0do")]
+position = Vector2(-25, 11)
+
+[node name="Goober2" parent="." instance=ExtResource("3_kh0do")]
+position = Vector2(-101, 11)
+
+[node name="Goober3" parent="." instance=ExtResource("3_kh0do")]
+position = Vector2(-78, 11)
